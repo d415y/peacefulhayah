@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
 import portrait from "@/assets/logo.png";
 import {
@@ -20,10 +19,6 @@ import {
   MessageCircle,
   Instagram,
 } from "lucide-react";
-
-export const Route = createFileRoute("/")({
-  component: Portfolio,
-});
 
 const experiences = [
   {
@@ -84,7 +79,6 @@ const qualifications = [
   { title: "دكتوراه في الطب النفسي السلوكي", place: "الجامعة المفتوحة للعلوم الطبية" },
   { title: "ماجستير علم النفس التربوي", place: "جامعة البلقاء التطبيقية" },
   { title: "دبلوم اختصاصي التقييم النفسي والاختبارات النفسية والنفسعصبية التطبيقي", place: "الجامعة البريطانية في ليدز" },
-  
   { title: "بكالوريوس اللغة الإنجليزية وآدابها", place: "الجامعة الأردنية" },
 ];
 
@@ -102,7 +96,7 @@ const publications = [
   "رحلة التعلم والإيمان (4–8 سنوات).",
 ];
 
-function Portfolio() {
+export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-foreground" dir="rtl">
       {/* NAV */}
@@ -210,7 +204,7 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* EXPERIENCE — image right + below: main grid */}
+      {/* EXPERIENCE */}
       <section id="experience" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
@@ -224,7 +218,6 @@ function Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-12 gap-10 items-start">
-            {/* Experience list — LEFT in RTL means appears on the visual left */}
             <div className="md:col-span-7 order-2 md:order-1 space-y-5">
               {experiences.map((exp, i) => (
                 <article
@@ -251,7 +244,6 @@ function Portfolio() {
               ))}
             </div>
 
-            {/* Image on the right */}
             <div className="md:col-span-5 order-1 md:order-2 md:sticky md:top-28">
               <div className="relative rounded-[2rem] overflow-hidden shadow-[var(--shadow-leaf)] aspect-[4/5]">
                 <img
@@ -281,7 +273,7 @@ function Portfolio() {
             </div>
           </div>
 
-          {/* MAIN GRID below */}
+          {/* SERVICES */}
           <div className="mt-24">
             <div className="text-center mb-12">
               <div className="text-primary font-semibold mb-2 text-sm tracking-widest uppercase">المهارات والكفاءات</div>
